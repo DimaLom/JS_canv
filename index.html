@@ -5,11 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
     <title>PhotoZhab</title>
 </head>
 
 <body>
+    <div class="head"></div>
 
+
+    <div class="canv">
+        <canvas id="canv" width="1000" height="800"></canvas>
+    </div>
+
+    <div class="tools">
+        <div class="coordinates">
+            <p id="x"><b>x: </b> <span id="x-coord"></span></p>
+            <p id="y"><b>y: </b> <span id="y-coord"></span></p>
+            <br>
+        </div>
+
+        <button name="tool-button" data-name='brush'>Brush</button>
+        <button name="tool-button" data-name='notbrush'>NotBrush</button>
+        <button name="tool-button" data-name='notbrush2'>NotBrush 2</button>
+
+        <select id='select-size'>
+			<option>5</option>
+			<option>10</option>
+			<option>15</option>
+			<option>20</option>
+		</select>
+
+        <input type="color" id="select-color">
+    </div>
+
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
