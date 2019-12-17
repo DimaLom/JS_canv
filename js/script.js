@@ -49,6 +49,7 @@ let editor = {
     },
     startDraw(evt) {
         if (editor.currentTool === 'brush') editor._drawBrush(evt)
+        if (editor.currentTool === 'eraser') editor._eraser(evt)
     },
     endDraw() {
         canvas.onmousemove = null
@@ -56,6 +57,11 @@ let editor = {
     _drawBrush() {
         canvas.onmousemove = () => {
             ctx.fillRect(editor.x, editor.y, editor.brushSize, editor.brushSize)
+        }
+    },
+    _eraser() {
+        canvas.onmousemove = () => {
+            ctx.clearRect(editor.x, editor.y, editor.brushSize, editor.brushSize)
         }
     }
 }
