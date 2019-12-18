@@ -93,6 +93,16 @@ body {
 .tool-btn:hover {
   border: 1px solid #aeffdd;
   color: #aeffdd;
+  background: #000;
+  -webkit-box-shadow: 0 0 10px 3px #000;
+          box-shadow: 0 0 10px 3px #000;
+}
+
+.tool-btn:active {
+  border: 1px solid #eeffdd;
+  color: #eeffdd;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .coordinates {
