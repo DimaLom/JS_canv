@@ -2,7 +2,6 @@ const doc = document
 
 const canvas = doc.querySelector('#canv')
 const ctx = canvas.getContext('2d')
-console.log(ctx)
 
 const xBlock = doc.querySelector('#x-coord')
 const yBlock = doc.querySelector('#y-coord')
@@ -19,6 +18,7 @@ let editor = {
     _init() {
         doc.addEventListener('input', this.inputHandler)
         doc.addEventListener('click', this.clickHandler)
+        doc.addEventListener('click', this._clear)
 
         canvas.addEventListener('mousemove', this.getCoordinates)
         canvas.addEventListener('mousedown', this.startEdit)
@@ -50,6 +50,7 @@ let editor = {
     startEdit(evt) {
         if (editor.currentTool === 'brush') editor._drawBrush(evt)
         if (editor.currentTool === 'eraser') editor._eraser(evt)
+        if (editor.currentTool === 'line') editor._drawLine()
     },
     endEdit() {
         canvas.onmousemove = null
@@ -62,6 +63,18 @@ let editor = {
     _eraser() {
         canvas.onmousemove = () => {
             ctx.clearRect(editor.x, editor.y, editor.brushSize, editor.brushSize)
+        }
+    },
+    _drawLine() {
+        ctx.lineWidth = editor.brushSize
+        ctx.strokeStyle = editor.currentColor
+        ctx.lineTo(editor.x, editor.y)
+        ctx.stroke()
+    },
+    _clear() {
+        if (editor.currentTool === 'clear') {
+            ctx.clearRect(0, 0, editor.width, editor.height)
+            ctx.beginPath()
         }
     }
 }

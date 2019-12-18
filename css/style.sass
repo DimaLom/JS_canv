@@ -11,6 +11,7 @@ body
     margin: 10px
     box-shadow: 0 0 20px 5px #000
     border-radius: 10px
+    cursor: pointer
     
 .container
     display: flex
@@ -23,10 +24,10 @@ body
 
 .tools
     display: flex
-    flex-flow: row wrap
+    flex-direction: column
     background: rgba(0, 0, 0, 0.3)
     height: 100%
-    width: 200px
+    width: 120px
     box-sizing: border-box
     padding: 20px
     align-items: center
@@ -53,7 +54,7 @@ body
     border-radius: 10px
     background: transparent
     margin: 10px
-    cursor: pointer
+    cursor: grab
     border: 1px solid #eeffdd
     color: #eeffdd
     transition: all ease .2s
@@ -68,6 +69,7 @@ body
         border: 1px solid #eeffdd
         color: #eeffdd
         box-shadow: none
+        cursor: grabbing
 
 .coordinates
     align-self: center
@@ -82,13 +84,16 @@ body
     border: 1px solid #eeffdd
     background: #eeffdd
     border-radius: 5px
-    cursor: pointer
+    cursor: grab
     transition: all ease .2s
     margin: 10px
 
     &:hover
         border: 1px solid #aeffdd
         background: #aeffdd
+
+    &:active
+        cursor: grabbing
 
 #select-size
     margin: 10px
@@ -96,12 +101,15 @@ body
     border: 1px solid #eeffdd
     background: #eeffdd
     border-radius: 5px
-    cursor: pointer
+    cursor: grab
     transition: all ease .2s
 
     &:hover
         border: 1px solid #aeffdd
         background: #aeffdd
+    
+    &:active
+        cursor: grabbing
 
 .footer
     display: flex

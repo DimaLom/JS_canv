@@ -13,6 +13,7 @@ body {
   -webkit-box-shadow: 0 0 20px 5px #000;
           box-shadow: 0 0 20px 5px #000;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .container {
@@ -38,13 +39,13 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background: rgba(0, 0, 0, 0.3);
   height: 100%;
-  width: 200px;
+  width: 120px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 20px;
@@ -83,7 +84,8 @@ body {
   border-radius: 10px;
   background: transparent;
   margin: 10px;
-  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
   border: 1px solid #eeffdd;
   color: #eeffdd;
   -webkit-transition: all ease .2s;
@@ -103,6 +105,8 @@ body {
   color: #eeffdd;
   -webkit-box-shadow: none;
           box-shadow: none;
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
 
 .coordinates {
@@ -122,7 +126,8 @@ body {
   border: 1px solid #eeffdd;
   background: #eeffdd;
   border-radius: 5px;
-  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
   -webkit-transition: all ease .2s;
   transition: all ease .2s;
   margin: 10px;
@@ -133,13 +138,19 @@ body {
   background: #aeffdd;
 }
 
+#select-color:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
 #select-size {
   margin: 10px;
   width: 50px;
   border: 1px solid #eeffdd;
   background: #eeffdd;
   border-radius: 5px;
-  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
   -webkit-transition: all ease .2s;
   transition: all ease .2s;
 }
@@ -147,6 +158,11 @@ body {
 #select-size:hover {
   border: 1px solid #aeffdd;
   background: #aeffdd;
+}
+
+#select-size:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
 
 .footer {
