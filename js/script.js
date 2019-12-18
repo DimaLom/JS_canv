@@ -21,8 +21,8 @@ let editor = {
         doc.addEventListener('click', this.clickHandler)
 
         canvas.addEventListener('mousemove', this.getCoordinates)
-        canvas.addEventListener('mousedown', this.startDraw)
-        canvas.addEventListener('mouseup', this.endDraw)
+        canvas.addEventListener('mousedown', this.startEdit)
+        canvas.addEventListener('mouseup', this.endEdit)
     },
 
     inputHandler(evt) {
@@ -47,11 +47,11 @@ let editor = {
         xBlock.innerText = editor.x
         yBlock.innerText = editor.y
     },
-    startDraw(evt) {
+    startEdit(evt) {
         if (editor.currentTool === 'brush') editor._drawBrush(evt)
         if (editor.currentTool === 'eraser') editor._eraser(evt)
     },
-    endDraw() {
+    endEdit() {
         canvas.onmousemove = null
     },
     _drawBrush() {

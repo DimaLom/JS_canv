@@ -7,41 +7,50 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>PhotoZhab</title>
+    <title>Рисовалка</title>
 </head>
 
 <body>
     <div class="container">
         <div class="head">
-            <h1 class="head-title">PhotoZhab</h1>
+            <h1 class="head-title">Рисовалка</h1>
+            <div class="coordinates">
+                <p id="x"><b>x: </b> <span id="x-coord"></span></p>
+                <p id="y"><b>y: </b> <span id="y-coord"></span></p>
+            </div>
         </div>
+
         <div class="editor-wrapper">
             <div class="tools">
                 <button class="tool-btn" name="tool-button" data-name="brush"><i class="fas fa-paint-brush"></i></button>
                 <button class="tool-btn" name="tool-button" data-name="eraser"><i class="fas fa-eraser"></i></button>
                 <button class="tool-btn" name="tool-button" data-name="fill"><i class="fas fa-fill-drip"></i></button>
 
-                <select id='select-size'>
-			<option>5</option>
-			<option>10</option>
-			<option>15</option>
-			<option>20</option>
-		</select>
-
                 <input type="color" id="select-color">
+
+                <select id='select-size'>
+                    <option>5</option>
+                    <option>10</option>
+                    <option>15</option>
+                    <option>20</option>
+                </select>
+
             </div>
 
             <div class="canv">
                 <canvas id="canv" width="1000" height="800"></canvas>
             </div>
-            <div class="coordinates">
-                <p id="x"><b>x: </b> <span id="x-coord"></span></p>
-                <p id="y"><b>y: </b> <span id="y-coord"></span></p>
-                <br>
-            </div>
-        </div>
-    </div>
 
+        </div>
+        <footer class="footer">
+            <p class="footer-text">
+                2019
+            </p>
+            <p class="footer-text">
+                Designed and developed by <span class="highlight">Dmitriy Lomov</span>
+            </p>
+        </footer>
+    </div>
 
     <script src="https://kit.fontawesome.com/04791b84e6.js" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>

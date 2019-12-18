@@ -7,8 +7,10 @@ body
     width: 1000px; 
     height: 800px; 
     border: 1px solid black
-    background: #dddddd
+    background: rgba(255, 255, 255, 0.8)
     margin: 10px
+    box-shadow: 0 0 20px 5px #000
+    border-radius: 10px
     
 .container
     display: flex
@@ -17,26 +19,49 @@ body
 
 .editor-wrapper
     display: flex
+    justify-content: space-around
 
 .tools
     display: flex
-    flex-direction: column
+    flex-flow: row wrap
+    background: rgba(0, 0, 0, 0.3)
+    height: 100%
+    width: 200px
+    box-sizing: border-box
+    padding: 20px
+    align-items: center
+    border-radius: 10px
+    box-shadow: 0 0 10px 2px #000
+    
+.head
+    display: flex
+    justify-content: space-between
+    background: rgba(0, 0, 0, 0.3)
+    box-shadow: 0 1px 6px 2px #000
+    margin-bottom: 20px
 
 .head-title
     color: #eeffdd
     font-size: 2.5em
     margin-left: 40px
     text-shadow: 2px 2px 4px #000
+    width: 200px
 
 .tool-btn 
-    width: 50px
+    width: 60px
     height: 30px
-    border: 1px solid #aeffdd
-    border-radius: 20px
-    color: #aeffdd
+    border-radius: 10px
     background: transparent
-    margin: 20px
+    margin: 10px
     cursor: pointer
+    border: 1px solid #eeffdd
+    color: #eeffdd
+    transition: all ease .2s
+
+    &:hover
+        border: 1px solid #aeffdd
+        color: #aeffdd
+
 
 .coordinates
     align-self: center
@@ -45,6 +70,46 @@ body
     p
         letter-spacing: 2px
         color: #eeffdd
+        text-shadow: 2px 2px 4px #000
 
+#select-color
+    border: 1px solid #eeffdd
+    background: #eeffdd
+    border-radius: 5px
+    cursor: pointer
+    transition: all ease .2s
+    margin: 10px
 
-    
+    &:hover
+        border: 1px solid #aeffdd
+        background: #aeffdd
+
+#select-size
+    margin: 10px
+    width: 50px
+    border: 1px solid #eeffdd
+    background: #eeffdd
+    border-radius: 5px
+    cursor: pointer
+    transition: all ease .2s
+
+    &:hover
+        border: 1px solid #aeffdd
+        background: #aeffdd
+
+.footer
+    display: flex
+    justify-content: space-between
+    padding: 20px
+    height: 100px
+    background: rgba(0, 0, 0, 0.5)
+    box-shadow: 0 -1px 6px 2px #000
+    margin-top: 50px
+
+    &-text
+        color: #777
+        text-shadow: 2px 2px 2px #000
+
+    .highlight
+        color: #aeffdd
+        text-shadow: 2px 2px 2px #000
